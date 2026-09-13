@@ -1,6 +1,7 @@
 ---
 name: industry-insight-engine
 version: 2.0.2
+homepage: https://github.com/xp1001/industry-insight-engine
 description: 行业洞察引擎（industry-insight-engine）— 输入任意行业/品牌/话题 →
   快速了解、拆解、分析、判断、预测并给出行动指南。假设驱动 4 步 + 外围扫描，中国市场原生适配，支持 --refresh 增量更新。
   Deep 模式情报系统不可跳过。**注意：本技能做行业/赛道研究，不做视频拆解**（视频拆解请用 industry-deconstruction-engine）。
