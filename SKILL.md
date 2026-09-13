@@ -4,8 +4,7 @@ version: 2.0.2
 homepage: https://github.com/xp1001/industry-insight-engine
 description: 行业洞察引擎（industry-insight-engine）— 输入任意行业/品牌/话题 →
   快速了解、拆解、分析、判断、预测并给出行动指南。假设驱动 4 步 + 外围扫描，中国市场原生适配，支持 --refresh 增量更新。
-  Deep 模式情报系统不可跳过。**注意：本技能做行业/赛道研究，不做视频拆解**（视频拆解请用 industry-deconstruction-engine）。
-  触发词：研究 XX / 分析 XX 行业 / 这个赛道怎么样 / XX 能赚吗 / 我要不要做 XX。
+  Deep 模式情报系统不可跳过。触发词：研究 XX / 分析 XX 行业 / 这个赛道怎么样 / XX 能赚吗 / 我要不要做 XX。
 author: XP
 created: 2026-06-28
 agent_created: true
@@ -18,8 +17,6 @@ tags:
 ---
 
 # 行业洞察引擎 (Industry Insight Engine) v2.0.2
-
-> 原 slug `industry-deconstruction-engine` 已让给视频逆向拆解引擎（同名不同物），本技能更名 `industry-insight-engine`；中文对外称"行业洞察引擎"，判断框架沿用原"行业拆解引擎"。
 
 > **一句话**：输入行业/品牌/话题 → 输出一份包含**格局拆解、机会判断、预测和行动指南**的决策级报告，并可持续刷新。
 >
