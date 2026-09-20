@@ -25,6 +25,8 @@
   5. 导航一律用页内锚点 #s-*，禁止链接本地 .md 文件；deep-dive 引用一律用**内置弹层**：
      生成时把 deep-dive/*.md 的完整内容内嵌为 <script type="text/markdown" id="md-xxx">，
      引用处用 openMd('md-xxx','标题') 弹出渲染（模板已内置渲染器，离线可用）。
+  5b. **hero 只对读者说话**：kicker 仅含「行业研究报告 + 数据截至日期」；深度代号（Quick/Standard/
+     Deep）、技能版本号、重跑/检索过程等内部元数据一律写入 analysis.md 头部，不进报告。
   6. 所有数字带（年份+口径+来源）脚注，表格下方用 .source-note 汇总。
   ════════════════════════════════════════════════════════════════════
 -->
@@ -196,7 +198,7 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 
 <!-- [所有档位] hero：必须含一句话总体判断 -->
 <header class="hero" id="s-top">
-  <p class="kicker">行业拆解报告 · {{DEPTH}} · {{DATE}}</p>
+  <p class="kicker">行业研究报告 · {{DATE}}</p>
   <h1>{{TARGET}}</h1>
   <span class="verdict verdict--warn">🟡 谨慎观察：总量在收缩，但存量翻新与整装渠道存在结构性机会</span>
   <p class="meta"><span>研究范围：{{SCOPE}}</span><span>数据截至：{{DATE}}</span><span>方法：4 步拆解 + 外围扫描（公开信源）</span></p>
