@@ -149,7 +149,7 @@ Quick 模式只产出 `report.html`，不写 `analysis.md`。
 - 主观评估（能力对照、打分）一律以表格呈现并标注「拆解评估」；唯一图表化的是机会金矩阵（CSS 网格）与 Deep 档趋势图（引用真实数据，带来源）
 - 单文件自包含（除 Chart.js CDN）、系统字体栈、内联样式、浅色主题、响应式、`max-width: 1400px`、`@media print` 隐藏 sidebar、页内锚点不链接 .md 文件
 - **deep-dive 引用一律用页内弹层**：生成时把 deep-dive/*.md 完整内容内嵌为 `<script type="text/markdown" id="md-xxx">`，引用处用 openMd() 弹出渲染（模板内置轻量 markdown 渲染器：标题/表格/列表/加粗/引用/代码，离线可用，Esc 关闭）——禁止"完整版见 xxx.md"式死引用
-- **hero 只对读者说话**：kicker 仅「行业研究报告 + 数据截至日期」；深度代号（Quick/Standard/Deep/Refresh）、技能版本号、重跑与检索过程等内部元数据写入 analysis.md 头部，不进报告
+- **hero 只对读者说话**：kicker 仅「行业研究报告 + 生成于 {日期}」；meta 行为「研究范围 + 数据截至日期」（数据截至与生成同日时省略，避免重复）；深度代号、版本号、重跑与检索次数等过程信息写入 analysis.md 头部与 sources.md，不进报告
 
 ---
 
