@@ -28,6 +28,10 @@
   5b. **hero 只对读者说话**：kicker 仅含「行业研究报告 + 生成于 {日期}」；meta 行为「研究范围 + 数据截至」
      （数据截至与生成同日则省略）。深度代号（Quick/Standard/Deep）、技能版本号、重跑/检索次数等
      内部元数据一律写入 analysis.md 头部，不进报告。
+  5c. **核心结论带置信徽章**：🟢 一手可核 / 🟡 多源二手一致 / ⚪ 单源线索——徽章跟结论走（hero 徽章、
+     KPI 卡、机会卡、对账表），让读者扫得到可信度分层。
+  5d. **《本报告的边界》固定区块**（机会判断之后）：证据结构 + 必须一手验证清单（找谁/问什么/花多久）
+     + 局限声明。行动指南含「验证清单」；下一步建议至多 1 条技能内动作、至少 1 条现实世界动作。
   6. 所有数字带（年份+口径+来源）脚注，表格下方用 .source-note 汇总。
   ════════════════════════════════════════════════════════════════════
 -->
@@ -121,6 +125,19 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .chip--warn{background:var(--warn-soft);color:var(--warn)}
 .chip--risk{background:var(--risk-soft);color:var(--risk)}
 .chip--empty{background:transparent;color:var(--faint);font-weight:400;border:1px dashed var(--line)}
+/* 置信徽章：跟核心结论走 */
+.conf{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:600;vertical-align:middle}
+.conf--1{background:var(--good-soft);color:var(--good)}
+.conf--2{background:var(--warn-soft);color:var(--warn)}
+.conf--3{background:var(--bg);color:var(--faint);border:1px solid var(--line)}
+/* 边界段：桌面研究上限声明 */
+.boundary{background:var(--warn-soft);border:1px solid #eedbb5;border-radius:var(--radius-s);padding:16px 20px;margin:10px 0 4px}
+.boundary h4{margin:0 0 8px;font-size:14.5px;color:var(--warn)}
+.boundary ul{margin:6px 0;padding-left:20px;font-size:13.5px;color:var(--ink)}
+.boundary .disclaimer{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+/* 阅读导读（太长不看） */
+.tldr{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
+.tldr a{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:13.5px}
 
 /* ── 图表 ─────────────────────────────────────────────────────── */
 .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
@@ -188,6 +205,7 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
     <a href="#s-land">格局拆解</a>
     <a href="#s-peri">外围扫描</a>
     <a href="#s-opp">机会判断</a>
+    <a href="#s-boundary">报告边界</a>
     <a href="#s-act">行动指南</a>
     <a href="#s-intel">情报摘要</a><!-- [Deep] -->
     <a href="#s-next">下一步建议</a>
@@ -207,7 +225,7 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 
 <!-- [所有档位] KPI：Quick 3 张 / Standard 4 张 / Deep 5 张 -->
 <div class="kpis">
-  <div class="kpi"><div class="num">≈3500 亿</div><div class="lbl">市场规模（2024，营收口径）</div><div class="src">估算 · 中国建筑卫生陶瓷协会</div></div>
+    <div class="kpi"><div class="num">≈3500 亿<span class="conf conf--2">多源二手</span></div><div class="lbl">市场规模（2024，营收口径）</div><div class="src">估算 · 中国建筑卫生陶瓷协会</div></div>
   <div class="kpi"><div class="num">5</div><div class="lbl">核心玩家（CR5 ≈ 18%）</div><div class="src">估算 · 上市公司财报</div></div>
   <div class="kpi"><div class="num">4</div><div class="lbl">识别机会（2 高确定性）</div><div class="src">本次拆解</div></div>
   <div class="kpi"><div class="num">3</div><div class="lbl">主要风险</div><div class="src">本次拆解</div></div>
@@ -222,6 +240,12 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
     <div class="callout"><b>格局分散、价格战延续</b>CR5 仅约 18%，中小厂以低价缠斗，纯经销铺货模式利润持续变薄。</div>
     <div class="callout"><b>机会在服务化</b>「卖砖」到「交付翻新」的服务化缺口是本次识别出的最高确定性机会。</div>
   </div>
+  <div class="tldr">
+    <a href="#s-act">⏱ 着急？直接看行动指南</a>
+    <a href="#s-opp">🎯 机会与风险</a>
+    <a href="#s-boundary">⚠️ 本报告的边界（先读）</a>
+  </div>
+  <p class="source-note">怎么读这张报告：结论徽章=总体判断；🟢🟡⚪小徽章=该结论的证据置信度（🟢一手可核/🟡多源二手/⚪单源线索）；机会金矩阵=横轴窗口期、纵轴确定性，绿=立刻做、黄=小成本试、红=别碰。</p>
 </section>
 
 <!-- [S+] 格局拆解 -->
@@ -301,6 +325,22 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
   <!-- [S+] 预测 -->
   <h3>6-12 个月预测</h3>
   <p>行业向「品牌集中 + 渠道服务化」两个方向同时演化：头部吃整装集采，尾部出清；翻新服务商会成为新增量入口，先跑通交付模型者先定价。变数：存量房装修补贴政策若落地，翻新窗口会提前打开。</p>
+
+  <h3 id="s-boundary">⚠️ 本报告的边界（先读这段再行动）</h3>
+  <div class="boundary">
+    <h4>桌面研究只能到这里</h4>
+    <ul>
+      <li><b>证据结构</b>：本次为公开信息桌面研究，一手来源占比 <b>30%</b>（上市公司公告/政府文件），其余为行业媒体与二手转引。</li>
+      <li><b>必须一手验证的清单</b>（桌面查不到，要出门才算数）：
+        <ul>
+          <li>翻新服务的真实续单率与转介绍率 —— 找 3 个已做翻新的本地服务商聊（建材市场/同行群）</li>
+          <li>整装渠道的真实账期 —— 找 2 个装企采购问付款周期</li>
+          <li>「一口价换新」的获客成本 —— 投 500 元本地推实测 3 天</li>
+        </ul>
+      </li>
+      <li><b>局限声明</b>：本报告基于公开信息桌面研究，未做实地验证与访谈。结论支持「是否值得投入验证」，不直接等于「可以入场」。</li>
+    </ul>
+  </div>
 </section>
 
 <!-- [S+] 行动指南 -->
@@ -308,11 +348,12 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
   <h2>行动指南</h2>
   <p class="sub">如果决定入场，第一步这样走</p>
   <ol class="steps">
-    <li><b>最佳切口：旧房翻新换新服务（单城试点）</b><span class="why">需求已被外围服务商验证，且尚无品牌化玩家；选 1 个二手房成交活跃的城区起步。</span></li>
+    <li><b>最佳切口：旧房翻新换新服务（单城试点）</b><span class="why">需求已被外围服务商验证，且尚无品牌化玩家；选 1 个二手房成交活跃的城区起步。<b>Fit 校验：匹配「本地供应链+施工资源」，若缺施工资源先补再进。</b></span></li>
     <li><b>前三步：跑通 10 单交付模型</b><span class="why">① 抖音本地推 + 装修内容获客；② 与 2 支口碑铺贴队签独家；③ 用「按㎡一口价」标准化报价单降低决策门槛。</span></li>
     <li><b>单位经济速算：单均毛利 ≈4500 元，首单即回本</b><span class="why">客单 ≈1.5 万 × 毛利 30% = 4500 元/单；获客成本 ≈1500 元/单（抖音本地推，估算）——模型成立的前提是交付不返工。</span></li>
     <li><b>资源需求：15-30 万 / 2 人 / 3 个月</b><span class="why">主要是获客预算与样板单补贴；铺贴队按单结算，不压人力成本（数字为估算）。</span></li>
     <li><b>避坑：不碰工程垫资、不做全品类、先服务后开店</b><span class="why">三个最高频死法：给装企垫资、SKU 铺太宽、没验证需求先租门店。</span></li>
+    <li><b>验证清单（本周就走出门）</b><span class="why">① 访 3 个本地翻新施工队：问真实单量与获客方式；② 陪 1 个业主走一次选砖流程：记录到店决策点；③ 投 500 元本地推：实测一条线索成本。</span></li>
   </ol>
 </section>
 
@@ -361,8 +402,8 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 <div class="next-steps" id="s-next">
   <h2 style="margin:0;font-size:19px">📋 下一步建议</h2>
   <ol>
-    <li><b>验证翻新交付模型</b> — 用 2 周跑 3 个真实换新订单，验证报价与毛利率假设，再决定是否加大投入。</li>
-    <li><b>对大角鹿做一轮 Deep 单品牌拆解</b> — 本次发现其内容获客打法最适配翻新服务，值得逐帧拆。（想执行就说：「深度拆解 大角鹿 --deep」）</li>
+    <li><b>本周就去验证：访 3 个本地翻新施工队</b> — 用边界段的验证清单，确认续单率假设（现实世界动作，先于一切）。（需要工具就说：「帮我列访谈提纲」）</li>
+    <li><b>对大角鹿做一轮 Deep 单品牌拆解</b> — 本次发现其内容获客打法最适配翻新服务。（想执行就说：「深度拆解 大角鹿 --deep」）</li>
     <li><b>把「整装账期」做成尽调清单</b> — 若走整装渠道，先查目标装企的应付账款周转，避免垫资陷阱。</li>
   </ol>
   <p style="margin:14px 0 0;color:var(--muted);font-size:13.5px">💬 接下来想怎么问：想深挖某个品牌 → 「深度拆解 品牌名 --deep」；想开始持续跟踪 → 「按情报方案出第一份周报」；对结论有异议 → 直接复制下方复盘 Prompt 追问；想换细分重跑 → 「用 {新范围} 重跑 {目标}」。</p>
