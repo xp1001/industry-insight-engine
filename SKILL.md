@@ -1,6 +1,6 @@
 ---
 name: industry-insight-engine
-version: 2.1.0
+version: 2.1.1
 homepage: https://github.com/xp1001/industry-insight-engine
 description: 行业洞察引擎（industry-insight-engine）— 输入任意行业/品牌/话题 →
   快速了解、拆解、分析、判断、预测并给出行动指南。假设驱动 4 步 + 外围扫描，中国市场原生适配，支持 --refresh 增量更新。
@@ -16,7 +16,7 @@ tags:
   - decision-engine
 ---
 
-# 行业洞察引擎 (Industry Insight Engine) v2.1.0
+# 行业洞察引擎 (Industry Insight Engine) v2.1.1
 
 > **一句话**：输入行业/品牌/话题 → 输出一份包含**格局拆解、机会判断、预测和行动指南**的决策级报告，并可持续刷新。
 >
@@ -150,6 +150,7 @@ Quick 模式只产出 `report.html`，不写 `analysis.md`。
 - 单文件自包含（除 Chart.js CDN）、系统字体栈、内联样式、浅色主题、响应式、`max-width: 1400px`、`@media print` 隐藏 sidebar、页内锚点不链接 .md 文件
 - **deep-dive 引用一律用页内弹层**：生成时把 deep-dive/*.md 完整内容内嵌为 `<script type="text/markdown" id="md-xxx">`，引用处用 openMd() 弹出渲染（模板内置轻量 markdown 渲染器：标题/表格/列表/加粗/引用/代码，离线可用，Esc 关闭）——禁止"完整版见 xxx.md"式死引用
 - **hero 只对读者说话**：kicker 仅「行业研究报告 + 生成于 {日期}」；meta 行为「研究范围 + 数据截至日期」（数据截至与生成同日时省略，避免重复）；深度代号、版本号、重跑与检索次数等过程信息写入 analysis.md 头部与 sources.md，不进报告
+- **AI 生成标识**：footer 必含「本报告由 AI 基于公开信息桌面研究生成」——分享场景下读者有权知道报告的生成方式（合规裁判裁决，源自 engineering-loop 审视）
 
 ---
 
@@ -252,7 +253,7 @@ WebSearch 2-3 次（"行业名+工具/代运营/新兴概念/趋势"+当前年�
 | G3 | 反证完成 | 每条机会有最强反方理由且引用需求证据；S3 含押注对账（修正/维持+依据） |
 | G4 | 矩阵诚实 | 四象限要么映射机会、要么"空"+原因；窗口期映射正确 |
 | G5 | 单位经济 | 已速算或明确标注数据不足 |
-| G6 | 报告合规 | 基于官方模板（tokens 未改、区块按深度裁剪）、hero 有结论徽章且无内部代号/版本号、无伪精确图表、deep-dive 引用为页内弹层（md 已内嵌，无死链）、核心结论带置信徽章、《本报告的边界》区块在位、下一步建议含 ≥1 条现实世界动作 |
+| G6 | 报告合规 | 基于官方模板（tokens 未改、区块按深度裁剪）、hero 有结论徽章且无内部代号/版本号、无伪精确图表、deep-dive 引用为页内弹层（md 已内嵌，无死链）、核心结论带置信徽章、《本报告的边界》区块在位、下一步建议含 ≥1 条现实世界动作、footer 含 AI 生成标识 |
 | G7 | 收尾件套 | 3 条建议带可复制指令 + 使用引导 + 复盘 Prompt（Standard/Deep 双落点；Quick 仅 html；Quick 用假设审查版模板） |
 | G8 | Deep 铁律 | `deep-dive/intelligence.md` 已生成且达硬规则 10 标准；report 内嵌摘要 |
 | G9 | 刷新纪律 | （仅 Refresh）≤5 次检索、三分支处理正确、sources.md 追加、变更可追溯 |
