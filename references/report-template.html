@@ -173,6 +173,8 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .review-box{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px}
 .review-box pre{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.7;margin:0 0 14px;color:var(--ink)}
 .copy-btn{border:1px solid var(--accent);background:var(--accent);color:#fff;padding:8px 18px;border-radius:var(--radius-s);font-size:13.5px;cursor:pointer}
+.print-btn{position:fixed;top:18px;right:18px;z-index:50;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:7px 14px;border-radius:999px;font-size:12.5px;cursor:pointer;box-shadow:var(--shadow)}
+.print-btn:hover{color:var(--accent);border-color:var(--accent)}
 .copy-btn:hover{opacity:.9}
 footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 
@@ -188,7 +190,7 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 @media print{
   body{background:#fff;font-size:12.5px}
   .layout{display:block;max-width:none;padding:0}
-  aside,.copy-btn,.chart-fallback{display:none!important}
+  aside,.copy-btn,.print-btn,.chart-fallback{display:none!important}
   section,.kpi,.opp,.next-steps,.review-box{box-shadow:none;break-inside:avoid}
   .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
@@ -217,6 +219,7 @@ footer{color:var(--faint);font-size:12.5px;text-align:center;padding:0 0 40px}
 
 <!-- [所有档位] hero：必须含一句话总体判断 -->
 <header class="hero" id="s-top">
+  <button class="print-btn" onclick="window.print()" title="打印/另存为 PDF">⬇ 导出 PDF</button>
   <p class="kicker">行业研究报告 · 生成于 {{DATE}}</p>
   <h1>{{TARGET}}</h1>
   <span class="verdict verdict--warn">🟡 谨慎观察：总量在收缩，但存量翻新与整装渠道存在结构性机会</span>
