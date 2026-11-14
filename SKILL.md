@@ -1,6 +1,6 @@
 ---
 name: industry-insight-engine
-version: 2.1.1
+version: 2.1.2
 homepage: https://github.com/xp1001/industry-insight-engine
 description: 行业洞察引擎（industry-insight-engine）— 输入任意行业/品牌/话题 →
   快速了解、拆解、分析、判断、预测并给出行动指南。假设驱动 4 步 + 外围扫描，中国市场原生适配，支持 --refresh 增量更新。
@@ -16,7 +16,7 @@ tags:
   - decision-engine
 ---
 
-# 行业洞察引擎 (Industry Insight Engine) v2.1.1
+# 行业洞察引擎 (Industry Insight Engine) v2.1.2
 
 > **一句话**：输入行业/品牌/话题 → 输出一份包含**格局拆解、机会判断、预测和行动指南**的决策级报告，并可持续刷新。
 >
@@ -105,6 +105,15 @@ tags:
 ---
 
 ## 五、输出规格
+
+### 输出根目录（运行时配置，v2.1.2）
+
+产物**不散落**——根目录是用户级配置，不是每次猜测：
+
+- **首次运行时询问一次**：「研究产物放在哪里？」（给出回车默认 `~/行业洞察/output/`）
+- 用户选定后写入用户级配置 `~/.industry-insight/config.json`（`{"output_root": "..."}`）——**不写进技能目录**（升级整体覆盖，用户级状态与分发物分离）
+- 之后所有运行自动落在 `{output_root}/{slug}/`，不再重复询问；用户说"换个地方存/以后存到 XX"时更新配置
+- 读取顺序：`~/.industry-insight/config.json` 存在则用其 `output_root`；不存在则按上述询问并写入
 
 ### 文件结构
 

@@ -84,7 +84,7 @@ v2.x 系列为稳定态：后续只由真实使用中的失败触发改动，不
 
 ## 运行产物
 
-运行产物写入你指定的工作目录 `output/{slug}/`（analysis.md + report.html + sources.md，Deep 另含 deep-dive/），重跑覆盖、留旧加序号。建议把运行产物目录单独 git 化——它们是这个技能的回归测试基线，比代码本身更难重建。
+**输出根目录是用户级配置**：首次运行时技能会问一次「研究产物放在哪里？」（默认 `~/行业洞察/output/`），写入 `~/.industry-insight/config.json` 后不再重复询问；说「换个地方存」即可重设。产物结构：`{output_root}/{slug}/`（analysis.md + report.html + sources.md，Deep 另含 deep-dive/），重跑覆盖、留旧加序号。建议把运行产物目录单独 git 化——它们是这个技能的回归测试基线，比代码本身更难重建。
 
 ---
 
