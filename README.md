@@ -78,7 +78,7 @@ ln -s ~/skills/industry-insight-engine ~/.agents/skills/industry-insight-engine
 
 ## 版本
 
-当前 **v2.1.1**（2026-11-12）。完整版本史见 [CHANGELOG.md](CHANGELOG.md)。
+当前 **v2.1.3**（2026-11-14）。完整版本史见 [CHANGELOG.md](CHANGELOG.md)。
 
 v2.x 系列为稳定态：后续只由真实使用中的失败触发改动，不再主动重构。
 
