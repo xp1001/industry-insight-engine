@@ -76,3 +76,4 @@
 - [ ] 三分支处理正确（无变化/局部变化/结论推翻），报告顶部或 analysis.md 末尾有可追溯的刷新记录
 - [ ] sources.md 为追加而非覆盖
 - [ ] 若核心结论变化，明确建议整体重跑
+- [ ] 上一轮仅为 Quick（无 analysis.md）时：不做 Refresh，转 Standard 首跑（目录为空仍转 Deep 首跑）

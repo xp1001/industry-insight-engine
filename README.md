@@ -43,9 +43,12 @@ ln -s ~/skills/industry-insight-engine ~/.agents/skills/industry-insight-engine
 
 ```
 ├── SKILL.md                      ← agent 操作手册（流程/硬规则/闸门，唯一事实源）
+├── CHANGELOG.md                  ← 版本史（每条规则的来源可追溯；改动必同步追加）
+├── TUTORIAL.md                   ← 新手教程（AI Agent 案例全流程走读）
+├── .github/ISSUE_TEMPLATE/       ← 「📊 决策反馈」Issue 模板
 └── references/
     ├── report-template.html      ← 官方报告模板（设计 tokens + 弹层组件，生成时"改内容不改皮"）
-    ├── china-tools.md            ← 中国工具栈白名单（18 工具逐个实证在营，长尾工具需验证才可入表）
+    ├── china-tools.md            ← 中国工具栈白名单（长尾工具需验证在营才可入表）
     └── golden-cases.md           ← 回归测试（5 个 Case + 结构断言，改版后必跑）
 ```
 
@@ -78,7 +81,7 @@ ln -s ~/skills/industry-insight-engine ~/.agents/skills/industry-insight-engine
 
 ## 版本
 
-当前 **v2.1.3**（2026-11-14）。完整版本史见 [CHANGELOG.md](CHANGELOG.md)。
+当前 **v2.1.5**（2026-11-22）。完整版本史见 [CHANGELOG.md](CHANGELOG.md)。
 
 v2.x 系列为稳定态：后续只由真实使用中的失败触发改动，不再主动重构。
 
